@@ -1,0 +1,18 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+.event-preview-container {
+  position: absolute;
+  z-index: 2000;
+  top: 20px; right: 20px;
+  
+  background: #61565655;
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 10px;
+}
+.leaflet-container {
+  width: 100vw;
+  height: 100vh;
+}

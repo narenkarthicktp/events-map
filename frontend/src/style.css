@@ -1,0 +1,30 @@
+
+.event-preview-container{
+  max-width: 700px;
+  padding: 2em;
+  border: 0.5px solid #FFF;
+}
+
+.event-preview-content{
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: 20% auto;
+  grid-template-areas:
+    "img head"
+    "img desc"
+  ;
+  grid-gap: 20px 10px;
+  align-items: center;
+   
+  color: #FFF;
+}
+.event-preview-content > h3  {
+  grid-area: head;
+}
+.event-preview-content > p {
+  grid-area: desc;
+}
+.event-preview-content > img {
+  grid-area: img;
+  width: 200px;
+}
