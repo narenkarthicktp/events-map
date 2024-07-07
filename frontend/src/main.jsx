@@ -1,40 +1,68 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 
-import EventModifier from './components/EventPreview.jsx';
 import EventMap from './components/EventMap.jsx';
-import "./style.css"
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <EventMap
-      center={{lat: 34.47843, lng:136.63153}}
-      maxBounds={[{lat:34.48084, lng:136.62253}, {lat:34.47387, lng:136.63938}]}
-      zoom={17}
-      tileProviderUrl="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png"
-      events={[
-        {
-          position: {lat:34.47591, lng:136.62883},
-          title: "Bug Catching Contest",
-          description: "\
-            To compete, Trainers must catch the single best Bug-type Pokémon they can find.\
-            To do this, Trainers are given twenty Sport Balls,\
-            and they are only allowed to use a single Pokémon from their party.\
-          ",
-          img: "../bug-contest.png"
-        },
-        {
-          position: {lat:34.47667, lng:136.63389},
-          title: "Pokéathlon",
-          description: "\
-            Pokéthlon consists of a number of athletic competitions involving Pokémon,\
-            in the manner of Olympic track and field competitions.\
-            Its name is a portmanteau of Pokémon and decathlon, as there are a total of 10 events.\
-          ",
-          img: "../pokeathlon.png"
-        }
-      ]}
-      eventPreview={EventModifier}
+ReactDOM.createRoot(document.getElementById("root")).render(
+	<React.StrictMode>
+		<EventMap
+			center={{lat: 34.47843, lng:136.63153}}
+			maxBounds={[{lat:34.48084, lng:136.62253}, {lat:34.47387, lng:136.63938}]}
+			zoom={17}
+			tileProviderUrl="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png"
+			events={[
+				{
+					position: {lat:34.47591, lng:136.62883},
+					queue: {
+						"live": [
+							{
+								eventId: 0,
+								name: "Bug catching contest",
+								starts: "20240509T20:00",
+								ends: "20240509T21:00",
+							}
+						],
+						"upcoming": [
+							{
+								eventId: 1,
+								name: "Bug catching contest",
+								starts: "20240516T20:00",
+								ends: "20240516T21:00",
+							}
+						]
+					}
+				},
+				{
+					position: {lat:34.47653, lng:136.63163},
+					queue: {
+						"live": [
+							{
+								eventId: 2,
+								name: "Relay Run",
+								starts: "20240509T20:00",
+								ends: "20240509T21:00",
+							}
+						],
+						"upcoming": [
+							{
+								eventId: 3,
+								name: "Hurdle Dash",
+								starts: "20240509T21:30",
+								ends: "20240509T22:30",
+							},
+							{
+								eventId: 4,
+								name: "Disc Catch",
+								starts: "20240509T23:00",
+								ends: "20240509T23:30"
+							}
+						]
+					}
+				},
+			]}
+		/>
+	</React.StrictMode>
+)
       // eventPreview={({event, setEvent}) => {
       //   return (
       //     <div className="event-preview-content">
@@ -54,7 +82,3 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       //     </div>
       //   );
       // }}
-    ></EventMap>
-  </React.StrictMode>
-);
-
